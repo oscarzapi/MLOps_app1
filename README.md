@@ -6,6 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### docker run -it -p 8080:8080 app1-docker
+to start the back-end run in a docker container
+
+and then to start the front-end of the application
+
 ### `npm start`
 
 Runs the app in the development mode.\
