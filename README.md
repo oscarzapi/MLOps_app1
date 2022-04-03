@@ -80,6 +80,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ###############################################################
 Push your container image to a registry
 
+Following the next url, https://azure.github.io/AppService/2021/03/04/How-to-Host-a-Python-application-with-Windows-Containers-on-App-Service.html
+
+
 
 Now that we’ve tested the application locally in a container we can push it to a container registry where the image will live. This will prepare us and satisfy the requirements for creating and publishing the application to App Service. First you must have a registry created before you can push the image to it. Once that is complete, you can continue with these instructions. For this example, we will be using Azure Container Registry, but you can use Docker Hub as well by swapping out the registry-name.azurecr.io with your-docker-hub-registry-name.
 
