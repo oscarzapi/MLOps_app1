@@ -73,3 +73,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+###############################################################
+Push your container image to a registry
+
+
+Now that we’ve tested the application locally in a container we can push it to a container registry where the image will live. This will prepare us and satisfy the requirements for creating and publishing the application to App Service. First you must have a registry created before you can push the image to it. Once that is complete, you can continue with these instructions. For this example, we will be using Azure Container Registry, but you can use Docker Hub as well by swapping out the registry-name.azurecr.io with your-docker-hub-registry-name.
+
+Before you attempt to tag and push the image, make sure you are logged in by using docker login in the command prompt
+
+docker login <registry-name>.azurecr.io
+This will prompt you to enter your username and password from your registry. You can find these under Access keys in your Container registry resource in the Azure portal.
+
+After you’ve logged in, run the following commands to tag and push your Docker image:
+
+docker tag mypythonapp:latest <registry-name>.azurecr.io/mypythonapp:latest
+docker push <registry-name>.azurecr.io/mypythonapp:latest
+Once the image is pushed you can verify that it is in your Azure Container Registry by viewing the Repositories in your Container registry resource. Next, we will use the image from our registry to create our Web App on App Service.
+
+Create the Web App using Premium v3
+When you are creating the Web App that you will publish your container to be sure to choose the correct options shown below. Name your site, choose Docker Container under Publishing type and Windows for the Operating System. Choose an available Region and then choose your SKU and size. Premium V3 is the only SKU that supports Windows containers. Learn more about the Premium V3 SKU here.
+
+Azure Web App
+
+Next, click the Next:Docker > button to pull your container image from Azure Container Registry.
+
+Choose Azure Container Registry as your Image Source and the registry options will show up for you to select. The registry you selected earlier should show up in the Registry drop-down along with the created Images and Tags.
+
+Azure Web App
+
+Once you have the correct options selected you can hit Review + create to start your deployment and verify your deployed app on App Service.
