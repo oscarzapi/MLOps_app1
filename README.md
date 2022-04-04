@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Frameworks and libraries used:
-scikit-learn, uvicorn, fastAPI, React
+scikit-learn, uvicorn, fastAPI, pydantic, React
 
 ## Available Scripts
 
