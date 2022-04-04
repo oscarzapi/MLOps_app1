@@ -16,6 +16,10 @@ and then to start the front-end of the application
 
 ### `npm start`
 
+Use git clone this repository, and then build the docker container.
+
+The backend container can be run by using 'docker run -it -p 8080:8080 app1-docker'
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
